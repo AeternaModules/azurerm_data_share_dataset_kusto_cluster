@@ -1,3 +1,7 @@
+output "data_share_dataset_kusto_clusters_id" {
+  description = "Map of id values across all data_share_dataset_kusto_clusters, keyed the same as var.data_share_dataset_kusto_clusters"
+  value       = { for k, v in azurerm_data_share_dataset_kusto_cluster.data_share_dataset_kusto_clusters : k => v.id }
+}
 output "data_share_dataset_kusto_clusters_display_name" {
   description = "Map of display_name values across all data_share_dataset_kusto_clusters, keyed the same as var.data_share_dataset_kusto_clusters"
   value       = { for k, v in azurerm_data_share_dataset_kusto_cluster.data_share_dataset_kusto_clusters : k => v.display_name }
